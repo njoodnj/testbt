@@ -33,15 +33,10 @@ public class test extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.content_test);
-        //id = (EditText) findViewById(R.id.NationalID);
-        //password = (EditText) findViewById(R.id.passwordHP);
-       // mac1 = getIntent().getStringExtra("mac");
-       // id.setText(mac1);
+
         Id = getIntent().getStringExtra("mac"); // Id is the mac
         Password = "";
 
-        // Toast.makeText(ctx, Id, Toast.LENGTH_LONG).show();
 
         BackGround b = new BackGround();
         b.execute(Id, Password);
