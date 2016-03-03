@@ -38,7 +38,7 @@ public class test extends Activity {
         //password = (EditText) findViewById(R.id.passwordHP);
        // mac1 = getIntent().getStringExtra("mac");
        // id.setText(mac1);
-        Id = getIntent().getStringExtra("mac");
+        Id = getIntent().getStringExtra("mac"); // Id is the mac
         Password = "";
 
         // Toast.makeText(ctx, Id, Toast.LENGTH_LONG).show();
@@ -49,23 +49,14 @@ public class test extends Activity {
     }
 
 
-   /* public void main_login(View v){
-        Id = getIntent().getStringExtra("mac");
-        Password = "";
 
-        // Toast.makeText(ctx, Id, Toast.LENGTH_LONG).show();
-
-        BackGround b = new BackGround();
-        b.execute(Id, Password);
-
-    }*/
 
     class BackGround extends AsyncTask<String, String, String> {
 
         @Override
         protected String doInBackground(String... params) {
-            String id = params[0];
-            String password = params[1];
+            String id = params[0]; // mac
+            String password = params[1]; //nothing
             String data="";
             int tmp;
 
@@ -133,14 +124,6 @@ public class test extends Activity {
                     Intent i = new Intent(ctx, MainActivity.class);
                     i.putExtra("r_id", ID);
                     i.putExtra("r_name", NAME);
-                    startActivity(i);
-                }
-                if (ROLE.equals("security")){
-                    s="security";
-
-                    Toast.makeText(ctx, s, Toast.LENGTH_LONG).show();
-                    Intent i = new Intent(ctx, MainActivity.class);
-
                     startActivity(i);
                 }
 
